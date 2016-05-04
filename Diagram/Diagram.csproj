@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C10EFE6-B231-448E-829E-34A37C202CB6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Diagram</RootNamespace>
+    <AssemblyName>Diagram</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ScintillaNET, Version=3.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.5.6\lib\net40\ScintillaNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Chart.Base, Version=13.1450.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Chart.Windows, Version=13.1450.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Core, Version=13.1450.0.21, Culture=neutral, PublicKeyToken=632609b4d040f6b4" />
+    <Reference Include="Syncfusion.Shared.Base, Version=13.1450.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\PropertyEditor\PropertyEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyEditor\PropertyEditor.Designer.cs">
+      <DependentUpon>PropertyEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropertyEditor\ReadOnlyPropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SymbolPalette\SymbolPalette.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SymbolPalette\SymbolPalette.Designer.cs">
+      <DependentUpon>SymbolPalette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SymbolPalette\SymbolPaletteListview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DiagramControl\DiagramControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DiagramControl\DiagramControl.Designer.cs">
+      <DependentUpon>DiagramControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DiagramControl\Document.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DiagramControl\Document.Designer.cs">
+      <DependentUpon>Document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramModel\DataType.cs" />
+    <Compile Include="DiagramModel\PropertyEditors\IdentifierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\IdentifierForm.Designer.cs">
+      <DependentUpon>IdentifierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\JSONInput.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\JsonObjectConverter.cs" />
+    <Compile Include="DiagramModel\PropertyEditors\JsonPathInput.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\TaskInputEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\TaskInputEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\TaskInputEditorForm.Designer.cs">
+      <DependentUpon>TaskInputEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\TaskOutputEditor.cs" />
+    <Compile Include="DiagramModel\PropertyEditors\TaskOutputEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\TaskOutputEditorForm.Designer.cs">
+      <DependentUpon>TaskOutputEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\TextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\TextEditor.Designer.cs">
+      <DependentUpon>TextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\VariableEditor.cs" />
+    <Compile Include="DiagramModel\PropertyEditors\VariableEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiagramModel\PropertyEditors\VariableEditorForm.Designer.cs">
+      <DependentUpon>VariableEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramModel\RoutedPoint.cs" />
+    <Compile Include="DiagramModel\ValidationAttribute.cs" />
+    <Compile Include="DiagramModel\WorkflowObjectEditing.cs" />
+    <Compile Include="DiagramView\Connector.cs" />
+    <Compile Include="DiagramModel\Direction.cs" />
+    <Compile Include="DiagramModel\MapRef.cs" />
+    <Compile Include="DiagramModel\PriorityQueue.cs" />
+    <Compile Include="DiagramModel\RouteMap.cs" />
+    <Compile Include="DiagramModel\ConnectionRouter.cs" />
+    <Compile Include="DiagramModel\Model.cs" />
+    <Compile Include="DiagramModel\RoutePoint.cs" />
+    <Compile Include="DiagramModel\WorkflowObjects.cs" />
+    <Compile Include="DiagramView\CircleShape.cs" />
+    <Compile Include="DiagramView\GraphicsExtension.cs" />
+    <Compile Include="DiagramView\Visible.cs" />
+    <Compile Include="DiagramView\Pin.cs" />
+    <Compile Include="DiagramView\BoxShape.cs" />
+    <Compile Include="DiagramView\RubberBand.cs" />
+    <Compile Include="DiagramView\Segment.cs" />
+    <Compile Include="DiagramView\Selection.cs" />
+    <Compile Include="DiagramView\SelectionFrame.cs" />
+    <Compile Include="DiagramView\Shape.cs" />
+    <Compile Include="DiagramView\View.cs" />
+    <Compile Include="PaletteManager\PaletteManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\PropertyEditor\PropertyEditor.resx">
+      <DependentUpon>PropertyEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SymbolPalette\SymbolPalette.resx">
+      <DependentUpon>SymbolPalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DiagramControl\DiagramControl.resx">
+      <DependentUpon>DiagramControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DiagramControl\Document.resx">
+      <DependentUpon>Document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiagramModel\PropertyEditors\IdentifierForm.resx">
+      <DependentUpon>IdentifierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiagramModel\PropertyEditors\TaskInputEditorForm.resx">
+      <DependentUpon>TaskInputEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiagramModel\PropertyEditors\TaskOutputEditorForm.resx">
+      <DependentUpon>TaskOutputEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiagramModel\PropertyEditors\TextEditor.resx">
+      <DependentUpon>TextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiagramModel\PropertyEditors\VariableEditorForm.resx">
+      <DependentUpon>VariableEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Box.png" />
+    <Content Include="Resources\Circle.png" />
+    <Content Include="Resources\Empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Remote\Remote.csproj">
+      <Project>{f5386413-15cd-4157-b2a4-ccf4a4681d81}</Project>
+      <Name>Remote</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

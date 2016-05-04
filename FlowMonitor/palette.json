@@ -1,0 +1,476 @@
+[
+  {
+    "group": "Basic",
+    "image": "circle",
+    "task": {
+      "taskId": "",
+      "activityName": "end",
+      "activityVersion": "0.0.0.0",
+      "outflows": [ ],
+      "symbol": {
+        "name": "end",
+        "label": "End",
+        "style": "circle"
+      }
+    }
+  },
+  {
+    "group": "Basic",
+    "image": "circle",
+    "task": {
+      "taskId": "",
+      "activityName": "cleanup",
+      "activityVersion": "0.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "cleanup",
+        "label": "Clean Up",
+        "style": "circle"
+      }
+    }
+  },
+  {
+    "group": "Basic",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "javascript",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "javascript",
+        "label": "Script",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Basic",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "test",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "test",
+        "label": "Test",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Basic",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "delay",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "delay",
+        "label": "Delay",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Basic",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "javascript",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "IfTrue"
+        },
+        {
+          "name": "IfFalse"
+        }
+      ],
+      "symbol": {
+        "name": "ifElse",
+        "label": "If Else",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Basic",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "asynch",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "asynch",
+        "label": "Asynch",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Basic",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "wait",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "wait",
+        "label": "Wait",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Quantel",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "quantelImport",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "quantelImport",
+        "label": "Quantel Import",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Quantel",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "quantelExport",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "quantelExport",
+        "label": "Quantel Export",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Quantel",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "quantelPublish",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "quantelPublish",
+        "label": "Quantel Publish",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "IPV",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "xcodeJob",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "xcodeJob",
+        "label": "XCode Job",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Updater",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "updateClip",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "updateClip",
+        "label": "Update Clip",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Updater",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "jobComplete",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "jobComplete",
+        "label": "Job Complete",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Updater",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "jobFailed",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "jobFailed",
+        "label": "Job Failed",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Updater",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "jobProgress",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "jobProgress",
+        "label": "Job Progress",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Updater",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "jobMediaProperties",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "jobMediaProperties",
+        "label": "Job Media Properties",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Updater",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "jobRestorePoints",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "jobRestorePoints",
+        "label": "Job Restore Points",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Diva",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "divaArchive",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "divaArchive",
+        "label": "Diva Archive",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Diva",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "divaRestore",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "divaRestore",
+        "label": "Diva Restore",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Diva",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "divaRestorePartial",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "divaRestorePartial",
+        "label": "Diva Restore Partial",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Diva",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "divaDelete",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "divaDelete",
+        "label": "Diva Delete",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Vantage",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "vantageJob",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "vantageJob",
+        "label": "Vantage Job",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Ftp",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "fxpCopy",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "fxpCopy",
+        "label": "FXP Copy",
+        "style": "box"
+      }
+    }
+  },
+  {
+    "group": "Mediagrid",
+    "image": "box",
+    "task": {
+      "taskId": "",
+      "activityName": "createPartial",
+      "activityVersion": "1.0.0.0",
+      "outflows": [
+        {
+          "name": "Out"
+        }
+      ],
+      "symbol": {
+        "name": "createPartial",
+        "label": "Create Partial",
+        "style": "box"
+      }
+    }
+  }
+]
