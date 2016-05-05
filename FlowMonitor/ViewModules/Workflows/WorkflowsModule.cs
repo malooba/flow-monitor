@@ -36,6 +36,7 @@ namespace FlowMonitor.ViewModules.Workflows
         private View view;
         private Model model;
         private DiagramControl diagram;
+        public bool EditMode { get; private set; }
 
         public WorkflowsModule()
         {
@@ -70,6 +71,7 @@ namespace FlowMonitor.ViewModules.Workflows
             if(diagram != null) diagram.Document.ReadOnly = !enable;
             propertyEditor.ReadOnly = !enable;
             toolBar.EnableEditing = enable;
+            EditMode = enable;
         }
 
         private void SetSelectorPanel(bool editMode)
@@ -93,7 +95,8 @@ namespace FlowMonitor.ViewModules.Workflows
 
         public override void ViewModuleSelected()
         {
-            selector.GetWorkflows();
+            if(!EditMode)
+                selector.GetWorkflows();
         }
 
         private void LoadModel()

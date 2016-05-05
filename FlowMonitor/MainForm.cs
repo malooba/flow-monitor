@@ -13,6 +13,7 @@
 //limitations under the License.
 
 using System;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using FlowMonitor.Properties;
@@ -106,6 +107,18 @@ namespace FlowMonitor
                 panlMenu.Controls.Add(ToolBar);
                 ToolBar.BringToFront();
                 ToolBar.Dock = DockStyle.Left;
+            }
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            if(workflowsModule.EditMode)
+            {
+                module = workflowsModule;
+                SelectModule();
+                MessageBox.Show("Unsaved workflow edit\r\nPlease save or discard", "Warning", MessageBoxButtons.OK);
+                e.Cancel = true;
             }
         }
 
