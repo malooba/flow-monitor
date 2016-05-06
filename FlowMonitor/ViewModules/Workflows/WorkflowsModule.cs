@@ -124,6 +124,7 @@ namespace FlowMonitor.ViewModules.Workflows
                 SetSelectorPanel(editMode: false);
                 EnableEditing(enable: false);
                 selector.GetWorkflows();
+                EditMode = false;
             }
         }
 
@@ -132,6 +133,7 @@ namespace FlowMonitor.ViewModules.Workflows
             SetSelectorPanel(editMode: false);
             EnableEditing(enable: false);
             OpenWorkflow(selector.SelectedWorkflow);
+            EditMode = false;
         }
 
         /*
