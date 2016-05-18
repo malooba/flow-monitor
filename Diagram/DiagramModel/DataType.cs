@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 using System.Xml;
 using Newtonsoft.Json.Linq;
 
@@ -126,7 +127,11 @@ namespace Diagram.DiagramModel
         public static DataType FromString(string s)
         {
             s = s.ToLower().Trim();
-            return AllTypes.FirstOrDefault(dt => dt.name == s);
+            if(s == string.Empty) return Any;   // Silently default no datatype to Any
+            var datatype = AllTypes.FirstOrDefault(dt => dt.name == s);
+            if(datatype.name != null) return datatype;
+            MessageBox.Show("Invalid datatype - using 'Any'");
+            return Any;
         }
 
         private static JToken ParseAny(string s)

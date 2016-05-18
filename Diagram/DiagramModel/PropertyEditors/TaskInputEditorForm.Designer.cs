@@ -43,10 +43,10 @@ namespace Diagram.DiagramModel.PropertyEditors
         private void InitializeComponent()
         {
             this.lblValue = new System.Windows.Forms.Label();
-            this.txtLit = new JsonInput();
+            this.txtLit = new System.Windows.Forms.TextBox();
             this.txtJsonPath = new JsonPathInput();
             this.lblPath = new System.Windows.Forms.Label();
-            this.txtDefault = new JsonInput();
+            this.txtDefault = new System.Windows.Forms.TextBox();
             this.lblDefault = new System.Windows.Forms.Label();
             this.chkbRequired = new System.Windows.Forms.CheckBox();
             this.isVar = new System.Windows.Forms.RadioButton();

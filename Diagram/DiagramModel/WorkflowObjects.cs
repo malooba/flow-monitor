@@ -171,9 +171,17 @@ namespace Diagram.DiagramModel
         public string ActivityVersion { get; set; }
 
         /// <summary>
+        /// Asynchronous task signal name
+        /// </summary>
+        [JsonProperty(PropertyName = "asyncSignal", NullValueHandling = NullValueHandling.Ignore, Order = 3)]
+        [Category("Async")]
+        [DisplayName("Async Signal Name")]
+        public string AsyncSignal { get; set; }
+
+        /// <summary>
         /// Inputs to the Task Activity
         /// </summary>
-        [JsonProperty(PropertyName = "inputs", NullValueHandling = NullValueHandling.Ignore, Order = 3)]
+        [JsonProperty(PropertyName = "inputs", NullValueHandling = NullValueHandling.Ignore, Order = 4)]
         [Category("I/O")]
         [TypeConverter(typeof(InputCollectionConvertor))]
         [Editor(typeof(TaskInputEditor), typeof(UITypeEditor))]
@@ -182,7 +190,7 @@ namespace Diagram.DiagramModel
         /// <summary>
         /// Outputs from Task Activity
         /// </summary>
-        [JsonProperty(PropertyName = "outputs", NullValueHandling = NullValueHandling.Ignore, Order = 4)]
+        [JsonProperty(PropertyName = "outputs", NullValueHandling = NullValueHandling.Ignore, Order = 5)]
         [Category("I/O")]
         [TypeConverter(typeof(OutputCollectionConvertor))]
         [Editor(typeof(TaskOutputEditor), typeof(UITypeEditor))]

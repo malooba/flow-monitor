@@ -182,9 +182,10 @@ namespace Diagram.DiagramModel.PropertyEditors
 
         private void DefaultChanged(object sender, EventArgs e)
         {
-            // This needs to be properly error checked 
+            var dataType = DataType.FromString(Current.Type);
             try
             {
+                dataType.Parse(txtLit.Text);
                 Current.Default = JToken.Parse(txtDefault.Text);
                 txtDefault.ForeColor = Color.Black;
             }

@@ -44,7 +44,7 @@ namespace Diagram.DiagramModel.PropertyEditors
         {
 			this.txtJsonPath = new JsonPathInput();
 			this.lblPath = new System.Windows.Forms.Label();
-			this.txtDefault = new JsonInput();
+			this.txtDefault = new System.Windows.Forms.TextBox();
 			this.lblDefault = new System.Windows.Forms.Label();
 			this.chkbRequired = new System.Windows.Forms.CheckBox();
 			this.isInput = new System.Windows.Forms.RadioButton();

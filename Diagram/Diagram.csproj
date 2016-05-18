@@ -95,9 +95,6 @@
     <Compile Include="DiagramModel\PropertyEditors\IdentifierForm.Designer.cs">
       <DependentUpon>IdentifierForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DiagramModel\PropertyEditors\JSONInput.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DiagramModel\PropertyEditors\JsonObjectConverter.cs" />
     <Compile Include="DiagramModel\PropertyEditors\JsonPathInput.cs">
       <SubType>Component</SubType>
