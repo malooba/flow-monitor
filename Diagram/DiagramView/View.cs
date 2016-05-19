@@ -123,7 +123,8 @@ namespace Diagram.DiagramView
                 Outflows = (from f in symbolTask.Outflows
                     select new FlowObj {Name = f.Name}).ToArray(),
                 Symbol = CloneSymbol(symbolTask.Symbol),
-                FailOutflow = new FlowObj { Name = "Err" }
+                FailOutflow = new FlowObj { Name = "Err" },
+                HiddenProperties = symbolTask.HiddenProperties
             };
 
 			if(activity != null)

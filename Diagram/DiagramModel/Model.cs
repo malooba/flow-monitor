@@ -51,6 +51,7 @@ namespace Diagram.DiagramModel
                 ActivityName = "start",
                 ActivityVersion = "0.0.0.0",
                 Outflows = new [] { new FlowObj {Name = "Out"} },
+                HiddenProperties = new List<string> { "AsyncSignal", "Inputs", "Outputs", "TaskList", "HeartbeatTimeout", "ScheduleToCloseTimeout", "ScheduleToStartTimeout", "StartToCloseTimeout", "TaskPriority" },
                 Symbol = new SymbolObj
                 {
                     Name = "start",

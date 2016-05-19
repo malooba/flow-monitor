@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
+using System.Linq;
 using Diagram.DiagramModel.PropertyEditors;
 using Diagram.DiagramView;
 using Newtonsoft.Json;
@@ -121,7 +122,7 @@ namespace Diagram.DiagramModel
     /// <summary>
     /// One workflow task
     /// </summary>
-    public class TaskObj
+    public class TaskObj : ICustomTypeDescriptor
     {
         /// <summary>
         /// Task ID (unique in workflow)
@@ -272,11 +273,15 @@ namespace Diagram.DiagramModel
         [Browsable(false)]
         public SymbolObj Symbol { get; set; }
 
-		// TODO:
-		// These somewhat hacky methods are used to define classes of task
-		// In time these should be replaced with something more robust but I really
-		// don't want to create endless flags.
-		public bool HasActivity()
+        [JsonProperty(PropertyName = "hiddenProperties", NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore, Order = 15)]
+        [Browsable(false)]
+        public List<string> HiddenProperties { get; set; }
+
+        // TODO:
+        // These somewhat hacky methods are used to define classes of task
+        // In time these should be replaced with something more robust but I really
+        // don't want to create endless flags.
+        public bool HasActivity()
 		{
             return Symbol.Name.ToLower() != "start" && Symbol.Name.ToLower() != "end" && Symbol.Name.ToLower() != "cleanup";
         }
@@ -290,6 +295,77 @@ namespace Diagram.DiagramModel
 		{
 			return Symbol.Name.ToLower() != "start" && Symbol.Name.ToLower() != "end" && Symbol.Name.ToLower() != "cleanup";
 		}
+
+        #region ICustomTypeDescriptor methods
+        public AttributeCollection GetAttributes()
+        {
+            return new AttributeCollection(null);
+        }
+
+        public string GetClassName()
+        {
+            return null;
+        }
+
+        public string GetComponentName()
+        {
+            return null;
+        }
+
+        public TypeConverter GetConverter()
+        {
+            return null;
+        }
+
+        public EventDescriptor GetDefaultEvent()
+        {
+            return null;
+        }
+
+        public PropertyDescriptor GetDefaultProperty()
+        {
+            return null;
+        }
+
+        public object GetEditor(Type editorBaseType)
+        {
+            return null;
+        }
+
+        public EventDescriptorCollection GetEvents()
+        {
+            return new EventDescriptorCollection(null);
+        }
+
+        public EventDescriptorCollection GetEvents(Attribute[] attributes)
+        {
+            return new EventDescriptorCollection(null);
+        }
+
+        public PropertyDescriptorCollection GetProperties()
+        {
+            return ((ICustomTypeDescriptor)this).GetProperties(null);
+        }
+
+        public PropertyDescriptorCollection GetProperties(Attribute[] attributes)
+        {
+            if(HiddenProperties == null)
+                return TypeDescriptor.GetProperties(typeof(TaskObj));
+
+            var descriptors = TypeDescriptor
+            .GetProperties(typeof(TaskObj))
+            .Cast<PropertyDescriptor>()
+            .Where(p => HiddenProperties.All(hp => hp != p.Name))
+            .ToArray();
+
+            return new PropertyDescriptorCollection(descriptors);
+        }
+
+        public object GetPropertyOwner(PropertyDescriptor pd)
+        {
+            return this;
+        }
+#endregion
     }
 
     /// <summary>
