@@ -53,17 +53,9 @@ namespace Diagram.DiagramModel
         /// </summary>
         public static DataType Float = new DataType("float", ParseFloat, GetJsonString);
         /// <summary>
-        /// Accepts a string that is a valid file path (does not check the path for existence)
+        /// Accepts a string that is a valid file or directory path (does not check the path for existence)
         /// </summary>
-        public static DataType FilePath = new DataType("filepath", ParseFilePath, GetUnescapedString);
-        /// <summary>
-        /// Accept a valid timecode string.
-        /// </summary>
-        public static DataType TimeCode = new DataType("timecode", ParseTimeCode, GetUnescapedString);
-        /// <summary>
-        /// Accept valid a framerate string.
-        /// </summary>
-        public static DataType FrameRate = new DataType("framerate", ParseFrameRate, GetUnescapedString);
+        public static DataType Path = new DataType("path", ParseFilePath, GetUnescapedString);
         /// <summary>
         /// A bare string literal, implies that the text must be valid JavaScript.
         /// Also signals to the editor that JavaScript syntax highlighting should be used.
@@ -88,7 +80,7 @@ namespace Diagram.DiagramModel
         /// </summary>
         public static readonly IList<DataType> AllTypes = new List<DataType>
         {
-           Any, Object, Array, String, Bool, Integer, Float, FilePath, TimeCode, FrameRate, JavaScript, Json, Xml, XmlFragment
+           Any, Object, Array, String, Bool, Integer, Float, Path, JavaScript, Json, Xml, XmlFragment
         };
 
         /// <summary>
@@ -199,19 +191,8 @@ namespace Diagram.DiagramModel
 
         private static JToken ParseFilePath(string s)
         {
-            // Validate format here
-            return s;
-        }
-
-        private static JToken ParseTimeCode(string s)
-        {
-            // Validate format here
-            return s;
-        }
-
-        private static JToken ParseFrameRate(string s)
-        {
-            // Validate format here
+            // throw if invalid path string
+            System.IO.Path.GetFullPath(s);
             return s;
         }
 

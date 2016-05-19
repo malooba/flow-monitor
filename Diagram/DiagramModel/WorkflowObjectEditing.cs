@@ -91,7 +91,7 @@ namespace Diagram.DiagramModel
             // Create a new collection object PropertyDescriptorCollection
             var pds = new PropertyDescriptorCollection(null);
 
-            // Iterate the list of employees
+            // Iterate the variables
             foreach(var v in this)
             {
                 var pd = new VariablePropertyDescriptor(this, v.Key);
@@ -261,7 +261,7 @@ namespace Diagram.DiagramModel
             // Create a new collection object PropertyDescriptorCollection
             var pds = new PropertyDescriptorCollection(null);
 
-            // Iterate the list of employees
+            // Iterate the Inputs
             foreach(var v in this)
             {
                 var pd = new InputPropertyDescriptor(this, v.Key);
