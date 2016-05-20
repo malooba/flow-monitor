@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing.Design;
+using System.Linq;
 
 namespace Diagram.DiagramModel
 {
@@ -258,11 +259,11 @@ namespace Diagram.DiagramModel
 
         public PropertyDescriptorCollection GetProperties()
         {
-            // Create a new collection object PropertyDescriptorCollection
+            // Create a new collection object PropertyDescriptorCollection 
             var pds = new PropertyDescriptorCollection(null);
 
             // Iterate the Inputs
-            foreach(var v in this)
+            foreach(var v in this.Where(v => !v.Value.Hidden))
             {
                 var pd = new InputPropertyDescriptor(this, v.Key);
                 pds.Add(pd);

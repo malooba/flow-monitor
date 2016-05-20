@@ -14,8 +14,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace Diagram.DiagramModel.PropertyEditors
 {
@@ -126,7 +129,8 @@ namespace Diagram.DiagramModel.PropertyEditors
                 isInput.Checked = !string.IsNullOrWhiteSpace(current.Path);
                 isLit.Checked = !isInput.Checked;
                 SetInputSource();
-                txtJsonPath.Text = (isInput.Checked ? current.Path : current.Lit) ?? "";
+                txtJsonPath.Text = current.Path ?? "";
+                txtLit.Text = current.Lit ?? "";
                 txtDefault.Text = current.Default ?? "";
                 chkbRequired.Checked = current.Required;
             }
@@ -137,6 +141,9 @@ namespace Diagram.DiagramModel.PropertyEditors
             SetInputSource();
         }
 
+        /// <summary>
+        /// Choose between input data or a literal value
+        /// </summary>
         private void SetInputSource()
         {
             var toVar = isInput.Checked;
@@ -145,6 +152,8 @@ namespace Diagram.DiagramModel.PropertyEditors
             lblPath.Text = toVar ? "Json Path" : "JSON Literal";
             lblDefault.Visible = toVar;
             lblRequired.Visible = toVar;
+            txtLit.Visible = !toVar;
+            txtJsonPath.Visible = toVar;
             var current = Current;
             if(toVar)
             {
@@ -156,6 +165,7 @@ namespace Diagram.DiagramModel.PropertyEditors
                 current.Default = null;
             }
 			txtJsonPath.Text = "";
+            txtLit.Text = "";
         }
 
         private void TypeChanged(object sender, EventArgs e)
@@ -166,10 +176,7 @@ namespace Diagram.DiagramModel.PropertyEditors
 
         private void PathChanged(object sender, EventArgs e)
         {
-            if(isInput.Checked)
-                Current.Path = txtJsonPath.Text;
-            else
-                Current.Lit = txtJsonPath.Text;
+            Current.Path = txtJsonPath.Text;
         }
 
         private void RequiredChanged(object sender, EventArgs e)
@@ -185,6 +192,37 @@ namespace Diagram.DiagramModel.PropertyEditors
         private void DescriptionChanged(object sender, EventArgs e)
         {
             Current.Description = txtDescription.Text;
+        }
+
+        private void LitChanged(object sender, EventArgs e)
+        {
+            var current = Current;
+            var dataType = DataType.FromString(current.Type);
+            try
+            {
+                dataType.Parse(txtLit.Text);
+                txtLit.ForeColor = Color.Black;
+            }
+            catch
+            {
+                txtLit.ForeColor = Color.Red;
+            }
+        }
+
+
+        private void LitValidating(object sender, CancelEventArgs e)
+        {
+            var current = Current;
+            var dataType = DataType.FromString(current.Type);
+            try
+            {
+                dataType.Parse(txtLit.Text);
+                current.Lit = txtLit.Text;
+            }
+            catch
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

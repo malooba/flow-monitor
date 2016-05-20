@@ -133,6 +133,17 @@ namespace Diagram.DiagramView
                 if(task.Outflows.Length != 0)
 				    task.Outputs = new OutputCollection(activity.Outputs);
 			}
+
+            // Override or add inputs with data from palette symbol
+            if(symbolTask.Inputs != null)
+                foreach(var input in symbolTask.Inputs)
+                    task.Inputs[input.Key] = input.Value;
+
+            // Override or add outputs with data from palette symbol
+            if(symbolTask.Outputs != null)
+                foreach(var output in symbolTask.Outputs)
+                    task.Outputs[output.Key] = output.Value;
+
             task.Symbol.Shape = Shape.Create(task.Symbol.Style, task, datum);
 
             if(symbolTask.HasFailOutflow())

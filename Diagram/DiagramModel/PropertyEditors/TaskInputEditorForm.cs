@@ -15,6 +15,7 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -37,7 +38,7 @@ namespace Diagram.DiagramModel.PropertyEditors
             InitializeComponent();
             cmboType.DataSource = DataType.AllTypes;
             this.inputs = inputs ?? new InputCollection();
-            foreach(var i in inputs)
+            foreach(var i in inputs.Where(i => !i.Value.Hidden))
                 cmboInputs.Items.Add(i.Key);
             if(Model.Workflow.Variables != null)
                 foreach(var variable in Model.Workflow.Variables)

@@ -1,140 +1,181 @@
 [
-  {
-    "group": "Basic",
-    "image": "circle",
-    "task": {
-      "taskId": "",
-      "activityName": "end",
-      "activityVersion": "0.0.0.0",
-      "outflows": [ ],
-      "hiddenProperties": ["AsyncSignal"],
-      "symbol": {
-        "name": "end",
-        "label": "End",
-        "style": "circle"
-      }
-    }
-  },
-  {
-    "group": "Basic",
-    "image": "circle",
-    "task": {
-      "taskId": "",
-      "activityName": "cleanup",
-      "activityVersion": "0.0.0.0",
-      "outflows": [
-        {
-          "name": "Out"
+    {
+        "group": "Basic",
+        "image": "circle",
+        "task": {
+            "taskId": "",
+            "activityName": "end",
+            "activityVersion": "0.0.0.0",
+            "outflows": [ ],
+            "hiddenProperties": [ "AsyncSignal" ],
+            "symbol": {
+                "name": "end",
+                "label": "End",
+                "style": "circle"
+            }
         }
-      ],
-      "hiddenProperties": ["AsyncSignal"],
-      "symbol": {
-        "name": "cleanup",
-        "label": "Clean Up",
-        "style": "circle"
-      }
-    }
-  },
-  {
-    "group": "Basic",
-    "image": "box",
-    "task": {
-      "taskId": "",
-      "activityName": "javascript",
-      "activityVersion": "1.0.0.0",
-      "outflows": [
-        {
-          "name": "Out"
+    },
+    {
+        "group": "Basic",
+        "image": "circle",
+        "task": {
+            "taskId": "",
+            "activityName": "cleanup",
+            "activityVersion": "0.0.0.0",
+            "outflows": [
+                {
+                    "name": "Out"
+                }
+            ],
+            "hiddenProperties": [ "AsyncSignal" ],
+            "symbol": {
+                "name": "cleanup",
+                "label": "Clean Up",
+                "style": "circle"
+            }
         }
-      ],
-      "hiddenProperties": ["AsyncSignal"],
-      "symbol": {
-        "name": "javascript",
-        "label": "Script",
-        "style": "box"
-      }
-    }
-  },
-  {
-    "group": "Basic",
-    "image": "box",
-    "task": {
-      "taskId": "",
-      "activityName": "delay",
-      "activityVersion": "1.0.0.0",
-      "hiddenProperties": ["AsyncSignal"],
-      "outflows": [
-        {
-          "name": "Out"
+    },
+    {
+        "group": "Basic",
+        "image": "box",
+        "task": {
+            "taskId": "",
+            "activityName": "javascript",
+            "activityVersion": "1.0.0.0",
+            "outflows": [
+                {
+                    "name": "Out"
+                }
+            ],
+            "hiddenProperties": [ "AsyncSignal" ],
+            "symbol": {
+                "name": "javascript",
+                "label": "Script",
+                "style": "box"
+            }
         }
-      ],
-      "symbol": {
-        "name": "delay",
-        "label": "Delay",
-        "style": "box"
-      }
-    }
-  },
-  {
-    "group": "Basic",
-    "image": "box",
-    "task": {
-      "taskId": "",
-      "activityName": "javascript",
-      "activityVersion": "1.0.0.0",
-      "outflows": [
-        {
-          "name": "IfTrue"
-        },
-        {
-          "name": "IfFalse"
+    },
+    {
+        "group": "Basic",
+        "image": "box",
+        "task": {
+            "taskId": "",
+            "activityName": "delay",
+            "activityVersion": "1.0.0.0",
+            "hiddenProperties": [ "AsyncSignal" ],
+            "outflows": [
+                {
+                    "name": "Out"
+                }
+            ],
+            "symbol": {
+                "name": "delay",
+                "label": "Delay",
+                "style": "box"
+            }
         }
-      ],
-      "hiddenProperties": ["AsyncSignal"],
-      "symbol": {
-        "name": "ifElse",
-        "label": "If Else",
-        "style": "box"
-      }
-    }
-  },
-  {
-    "group": "Basic",
-    "image": "box",
-    "task": {
-      "taskId": "",
-      "activityName": "asynch",
-      "activityVersion": "1.0.0.0",
-      "outflows": [
-        {
-          "name": "Out"
+    },
+    {
+        "group": "Basic",
+        "image": "box",
+        "task": {
+            "taskId": "",
+            "activityName": "javascript",
+            "activityVersion": "1.0.0.0",
+            "outflows": [
+                {
+                    "name": "IfTrue"
+                },
+                {
+                    "name": "IfFalse"
+                }
+            ],
+            "hiddenProperties": [ "AsyncSignal" ],
+            "symbol": {
+                "name": "ifElse",
+                "label": "If Else",
+                "style": "box"
+            }
         }
-      ],
-      "symbol": {
-        "name": "asynch",
-        "label": "Asynch",
-        "style": "box"
-      }
-    }
-  },
-  {
-    "group": "Basic",
-    "image": "box",
-    "task": {
-      "taskId": "",
-      "activityName": "wait",
-      "activityVersion": "1.0.0.0",
-      "outflows": [
-        {
-          "name": "Out"
+    },
+    {
+        "group": "Basic",
+        "image": "box",
+        "task": {
+            "taskId": "",
+            "activityName": "asynch",
+            "activityVersion": "1.0.0.0",
+            "outflows": [
+                {
+                    "name": "Out"
+                }
+            ],
+            "symbol": {
+                "name": "asynch",
+                "label": "Asynch",
+                "style": "box"
+            }
         }
-      ],
-      "hiddenProperties": ["AsyncSignal"], 
-      "symbol": {
-        "name": "wait",
-        "label": "Wait",
-        "style": "box"
-      }
+    },
+    {
+        "group": "Basic",
+        "image": "box",
+        "task": {
+            "taskId": "",
+            "activityName": "wait",
+            "activityVersion": "1.0.0.0",
+            "outflows": [
+                {
+                    "name": "Out"
+                }
+            ],
+            "hiddenProperties": [ "AsyncSignal" ],
+            "symbol": {
+                "name": "wait",
+                "label": "Wait",
+                "style": "box"
+            }
+        }
+    },
+    {
+        "group": "Scripted",
+        "image": "box",
+        "task": {
+            "taskId": "",
+            "activityName": "javascript",
+            "activityVersion": "1.0.0.0",
+            "inputs": {
+                "$script": {
+                    "type": "javascript",
+                    "lit": "result.sum = x + y;",
+                    "hidden": true,
+                    "required": false
+                },
+                "x": {
+                    "type": "integer",
+                    "required": true
+                },
+                "y": {
+                    "type": "integer",
+                    "required": true
+                }
+            },
+            "outputs": {
+                "sum": {
+                    "type": "integer"
+                }
+            },
+            "outflows": [
+                {
+                    "name": "Out"
+                }
+            ],
+            "hiddenProperties": [ "AsyncSignal" ],
+            "symbol": {
+                "name": "adder",
+                "label": "Adder",
+                "style": "box"
+            }
+        }
     }
-  }
 ]

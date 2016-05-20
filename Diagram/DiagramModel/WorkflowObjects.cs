@@ -596,6 +596,13 @@ namespace Diagram.DiagramModel
         public bool UserDefined
         { get; set; }
 
+        /// <summary>
+        /// Hidden inputs are not shown in the editors
+        /// They must be configured in the palette.json entry 
+        /// </summary>
+        [JsonProperty(PropertyName = "hidden", NullValueHandling = NullValueHandling.Ignore, Order = 7)]
+        public bool Hidden
+        { get; set; }
 
         [JsonIgnore]
         [Browsable(false)]
@@ -624,7 +631,8 @@ namespace Diagram.DiagramModel
                 Default = Default?.DeepClone(),
                 Description = Description,
                 Required = Required,
-                UserDefined = UserDefined
+                UserDefined = UserDefined,
+                Hidden = Hidden
             };
         }
     }

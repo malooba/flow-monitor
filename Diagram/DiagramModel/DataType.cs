@@ -118,6 +118,7 @@ namespace Diagram.DiagramModel
         /// <returns></returns>
         public static DataType FromString(string s)
         {
+            if(s == null) return Any;
             s = s.ToLower().Trim();
             if(s == string.Empty) return Any;   // Silently default no datatype to Any
             var datatype = AllTypes.FirstOrDefault(dt => dt.name == s);
